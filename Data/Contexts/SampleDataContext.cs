@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GamesAPI.Data.Contexts
 {
-    public class SampleDataContext : DbJogosContext, IUnitOfWork
+    public class SampleDataContext : DbContext, IUnitOfWork
     {
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<Desenvolvedora> Desenvolvedoras { get; set; }

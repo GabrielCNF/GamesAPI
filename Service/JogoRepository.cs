@@ -7,16 +7,12 @@ using System.Diagnostics;
 
 namespace GamesAPI.Service
 {
-    public class BaseRepository<T> where T : class
+    public class JogoRepository<T> where T : class
     {
-        private SampleDataContext _context;
+        IUnitOfWork unitOfWork = new SampleDataContext();
 
-        public class JogoRepository(IUnitOfWork unitOfWork)
+        public JogoRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            if (unitOfWork == null)
-                throw new ArgumentNullException("UnitOfWork");
-
-            _context = unitOfWork as SampleDataContext;
         }
         public T Find(int id)
         {

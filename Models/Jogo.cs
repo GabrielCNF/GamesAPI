@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GamesAPI.Models;
 
@@ -17,13 +18,15 @@ public partial class Jogo
 
     public DateTime? DataLancamento { get; set; }
 
-    public int? DesenvolvedoraId { get; set; }
+    public int DesenvolvedoraId { get; set; }
 
-    public int? DistribuidoraId { get; set; }
+    public int DistribuidoraId { get; set; }
+    
+    [Required(ErrorMessage = "Desenvolvedora Obrigatória")]
+    public virtual Desenvolvedora Desenvolvedora { get; set; }
 
-    public virtual Desenvolvedora? Desenvolvedora { get; set; }
-
-    public virtual Distribuidora? Distribuidora { get; set; }
+    [Required(ErrorMessage = "Distribuídora Obrigatória")]
+    public virtual Distribuidora Distribuidora { get; set; }
 
     public virtual Estilo Estilo { get; set; } = null!;
 

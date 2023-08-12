@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace GamesAPI.Data.Repositories
 {
-    public class BaseRepository<T> where T : class
+    public class BaseRepository<T> : IDisposable, IBaseRepository<T> where T : class
     {
         private SampleDataContext _context;
 
