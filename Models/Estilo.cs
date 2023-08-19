@@ -17,4 +17,5 @@ public partial class Estilo
     public virtual ICollection<Estilo> JogoEstiloTercs { get; set; } = new List<Estilo>();
 
     public virtual ICollection<Estilo> JogoEstilos { get; set; } = new List<Estilo>();
+    public virtual ICollection<Jogo> Jogos { get; set; } = new List<Jogo>();
 }

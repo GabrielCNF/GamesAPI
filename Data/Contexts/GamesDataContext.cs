@@ -1,11 +1,11 @@
 ﻿using AppDbContext;
-using GamesAPI.Data.Repositories.Interfaces;
+using GamesAPI.Data.Contexts.Interfaces;
 using GamesAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GamesAPI.Data.Contexts
 {
-    public class SampleDataContext : DbContext, IUnitOfWork
+    public class GamesDataContext : DbContext, IUnitOfWork
     {
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<Desenvolvedora> Desenvolvedoras { get; set; }

@@ -13,4 +13,5 @@ public partial class Distribuidora
     public string Nome { get; set; }
 
     public virtual ICollection<Distribuidora> Distribuidoras { get; set; } = new List<Distribuidora>();
+    public virtual ICollection<Jogo> Jogos { get; set; } = new List<Jogo>();
 }

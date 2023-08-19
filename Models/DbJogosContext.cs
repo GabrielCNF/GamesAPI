@@ -97,18 +97,18 @@ public partial class DbJogosContext : DbContext
                 .HasForeignKey(d => d.DistribuidoraId)
                 .HasConstraintName("FK__jogos__distribui__36B12243");
 
-            entity.HasOne(d => d.Estilo).WithMany(p => p.JogoEstilos)
-                .HasForeignKey(d => d.EstiloId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__jogos__estilo_id__32E0915F");
+            //entity.HasOne(d => d.Estilo).WithMany(p => p.JogoEstilos)
+            //    .HasForeignKey(d => d.EstiloId)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK__jogos__estilo_id__32E0915F");
 
-            entity.HasOne(d => d.EstiloSec).WithMany(p => p.JogoEstiloSecs)
-                .HasForeignKey(d => d.EstiloSecId)
-                .HasConstraintName("FK__jogos__estilo_se__33D4B598");
+            //entity.HasOne(d => d.EstiloSec).WithMany(p => p.JogoEstiloSecs)
+            //    .HasForeignKey(d => d.EstiloSecId)
+            //    .HasConstraintName("FK__jogos__estilo_se__33D4B598");
 
-            entity.HasOne(d => d.EstiloTerc).WithMany(p => p.JogoEstiloTercs)
-                .HasForeignKey(d => d.EstiloTercId)
-                .HasConstraintName("FK__jogos__estilo_te__34C8D9D1");
+            //entity.HasOne(d => d.EstiloTerc).WithMany(p => p.JogoEstiloTercs)
+            //    .HasForeignKey(d => d.EstiloTercId)
+            //    .HasConstraintName("FK__jogos__estilo_te__34C8D9D1");
         });
 
         OnModelCreatingPartial(modelBuilder);

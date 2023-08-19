@@ -23,9 +23,11 @@ public partial class Jogo
     public int DistribuidoraId { get; set; }
     
     [Required(ErrorMessage = "Desenvolvedora Obrigatória")]
+    [Display(Name = "Desenvolvedora")]
     public virtual Desenvolvedora Desenvolvedora { get; set; }
 
     [Required(ErrorMessage = "Distribuídora Obrigatória")]
+    [Display(Name = "Distribuidora")]
     public virtual Distribuidora Distribuidora { get; set; }
 
     public virtual Estilo Estilo { get; set; } = null!;

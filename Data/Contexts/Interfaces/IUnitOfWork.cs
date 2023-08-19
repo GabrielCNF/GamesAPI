@@ -1,4 +1,4 @@
-﻿namespace GamesAPI.Data.Repositories.Interfaces
+﻿namespace GamesAPI.Data.Contexts.Interfaces
 {
     public interface IUnitOfWork
     {

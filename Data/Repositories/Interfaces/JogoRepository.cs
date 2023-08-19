@@ -1,24 +1,24 @@
 ﻿using AppDbContext;
 using GamesAPI.Data.Contexts;
-using GamesAPI.Data.Repositories.Interfaces;
+using GamesAPI.Data.Contexts.Interfaces;
 using GamesAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
-namespace GamesAPI.Data.Repositories
+namespace GamesAPI.Data.Repositories.Interfaces
 {
-    public class BaseRepository<T> : IDisposable, IBaseRepository<T> where T : class
+    public class JogoRepository<T> : IDisposable, IBaseRepository<T> where T : class
     {
-        private SampleDataContext _context;
+        private GamesDataContext _context;
 
-        public BaseRepository(IUnitOfWork unitOfWork)
+        public JogoRepository(IUnitOfWork unitOfWork)
         {
             if (unitOfWork == null)
                 throw new ArgumentNullException("UnitOfWork");
 
-            _context = unitOfWork as SampleDataContext;
+            _context = unitOfWork as GamesDataContext;
         }
-        public T Find(int id) 
+        public T Find(int id)
         {
             return _context.Set<T>().Find(id);
         }
@@ -37,13 +37,13 @@ namespace GamesAPI.Data.Repositories
         {
             _context.Set<T>().Remove(item);
         }
-        
+
         public void Edit(T item)
         {
             _context.Entry(item).State = EntityState.Modified;
         }
 
-        public void Dispose() 
+        public void Dispose()
         {
             _context.Dispose();
         }
